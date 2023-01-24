@@ -18,4 +18,8 @@ class ProxyBandTechnicalTaskApplicationTests {
         assertThat(userController).isNotNull();
     }
 
+    @Test
+    void mainTest(){
+        ProxyBandTechnicalTaskApplication.main(new String[]{});
+    }
 }
