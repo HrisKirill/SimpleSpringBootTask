@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        return new ResponseEntity<>(userService.deleteUser(id), HttpStatus.OK);
     }
 
     @PostMapping("/list")

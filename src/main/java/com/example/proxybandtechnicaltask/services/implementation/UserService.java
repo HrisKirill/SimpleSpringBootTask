@@ -55,10 +55,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void deleteUser(Long id) {
+    public String deleteUser(Long id) {
         Optional<User> userForDeletingIdOptional = userRepository.findById(id);
         if (userForDeletingIdOptional.isPresent()) {
             userRepository.delete(userForDeletingIdOptional.get());
+
+            return "User with id:" + id + " was successfully removed";
         } else {
             throw new CustomEmptyDataException("Unable to delete user");
         }
@@ -68,6 +70,4 @@ public class UserService implements IUserService {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
-
-
 }

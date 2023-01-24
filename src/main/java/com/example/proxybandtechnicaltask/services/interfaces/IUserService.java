@@ -12,7 +12,7 @@ public interface IUserService {
 
     User findById(Long id) throws CustomEmptyDataException;
 
-    void deleteUser(Long id);
+    String deleteUser(Long id);
 
     List<User> getAllUsers();
 }
